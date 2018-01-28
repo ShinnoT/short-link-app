@@ -1,1 +1,12 @@
 /* CSS declarations go here */
+.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: white;
+  background: red;
+  padding: 10px;
+  font-weight: bold;
+}
