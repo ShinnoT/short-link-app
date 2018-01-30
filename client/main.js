@@ -4,6 +4,8 @@ import ReactDOM from "react-dom";
 
 //local imports
 import { onAuthChange, routes } from "../imports/routes/routes";
+import { Links } from "../imports/api/links";
+import { Link } from "react-router-dom";
 
 Tracker.autorun(() => {
   //double flip with !! changes anything into a boolean
