@@ -1,5 +1,6 @@
 import { Mongo } from "meteor/mongo";
 import { Meteor } from "meteor/meteor";
+import SimpleSchema from "simpl-schema";
 
 export const Links = new Mongo.Collection("links");
 
@@ -20,6 +21,20 @@ Meteor.methods({
     if (!userId) {
       throw new Meteor.Error("not authorized");
     }
+
+    //label property set equal to 'Your link' is so that
+    //error message comes out prettier
+    // try {
+    new SimpleSchema({
+      url: {
+        type: String,
+        label: "Your link",
+        regEx: SimpleSchema.RegEx.Url
+      }
+    }).validate({ url });
+    // } catch (error) {
+    //   throw new Meteor.Error(400, error.message);
+    // }
 
     Links.insert({ url, userId });
   }
