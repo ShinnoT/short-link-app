@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Meteor } from "meteor/meteor";
 import { Accounts } from "meteor/accounts-base";
+// import { Link } from "react-router-dom";
 
 // local imports
-import { Links } from "../api/links";
+// import { Links } from "../api/links";
 import { LinksList } from "./LinksList";
 
 export class Lnk extends React.Component {
@@ -13,9 +14,11 @@ export class Lnk extends React.Component {
 
   onSubmit(event) {
     const url = this.refs.url.value.trim();
+    const userId = Meteor.userId();
     event.preventDefault();
     if (url) {
-      Links.insert({ url });
+      // Links.insert({ url, userId });
+      Meteor.call("links.insert", url);
       this.refs.url.value = "";
     }
   }
