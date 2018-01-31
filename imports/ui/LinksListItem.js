@@ -31,13 +31,22 @@ export class LinksListItem extends React.Component {
   componentWillUnmount() {
     this.clipboard.destroy();
   }
+
+  onClick() {
+    Meteor.call("links.setVisibility", this.props._id, !this.props.visible);
+  }
+
   render() {
     return (
       <div>
         <p>{this.props.url}</p>
         <p>{this.props.shortUrl}</p>
+        <p>visible: {this.props.visible.toString()}</p>
         <button ref="copy" data-clipboard-text={this.props.shortUrl}>
           {this.state.copyButtonText}
+        </button>
+        <button onClick={this.onClick.bind(this)}>
+          {this.props.visible ? "Hide" : "Unhide"}
         </button>
       </div>
     );
@@ -48,5 +57,6 @@ LinksListItem.propTypes = {
   _id: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired,
   shortUrl: PropTypes.string.isRequired
 };
