@@ -52,6 +52,9 @@ export class LinksListItem extends React.Component {
           visitedCount={this.props.visitedCount}
           lastVisitedAt={this.props.lastVisitedAt}
         />
+        <a href={this.props.shortUrl} className="button" target="_blank">
+          Visit
+        </a>
         <button ref="copy" data-clipboard-text={this.props.shortUrl}>
           {this.state.copyButtonText}
         </button>
