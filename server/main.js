@@ -26,6 +26,7 @@ Meteor.startup(() => {
       response.statusCode = 302;
       response.setHeader("Location", `${link.url}`);
       response.end();
+      Meteor.call("links.trackVisit", _id);
     } else {
       next();
     }

@@ -2,6 +2,11 @@ import React from "react";
 import { Meteor } from "meteor/meteor";
 import PropTypes from "prop-types";
 import Clipboard from "clipboard";
+import moment from "moment";
+
+// import { Tracker } from "meteor/tracker";
+
+import { Stats } from "./Stats";
 
 export class LinksListItem extends React.Component {
   constructor(props) {
@@ -42,6 +47,11 @@ export class LinksListItem extends React.Component {
         <p>{this.props.url}</p>
         <p>{this.props.shortUrl}</p>
         <p>visible: {this.props.visible.toString()}</p>
+        {/* {element.toString()} */}
+        <Stats
+          visitedCount={this.props.visitedCount}
+          lastVisitedAt={this.props.lastVisitedAt}
+        />
         <button ref="copy" data-clipboard-text={this.props.shortUrl}>
           {this.state.copyButtonText}
         </button>
@@ -58,5 +68,7 @@ LinksListItem.propTypes = {
   url: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
-  shortUrl: PropTypes.string.isRequired
+  shortUrl: PropTypes.string.isRequired,
+  visitedCount: PropTypes.number.isRequired,
+  lastVisitedAt: PropTypes.number
 };

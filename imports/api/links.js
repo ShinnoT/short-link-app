@@ -20,6 +20,8 @@ Meteor.methods({
   "links.insert"(url) {
     const userId = this.userId;
     const visible = true;
+    const visitedCount = 0;
+    const lastVisitedAt = null;
     if (!userId) {
       throw new Meteor.Error("not authorized");
     }
@@ -38,7 +40,14 @@ Meteor.methods({
     //   throw new Meteor.Error(400, error.message);
     // }
 
-    Links.insert({ _id: shortid.generate(), url, userId, visible });
+    Links.insert({
+      _id: shortid.generate(),
+      url,
+      userId,
+      visible,
+      visitedCount,
+      lastVisitedAt
+    });
   },
   "links.setVisibility"(linkId, visibility) {
     const userId = this.userId;
@@ -59,5 +68,22 @@ Meteor.methods({
     }).validate({ _id, visible });
 
     Links.update({ _id, userId }, { $set: { visible } });
+  },
+  "links.trackVisit"(linkId) {
+    const _id = linkId;
+    new SimpleSchema({
+      _id: {
+        type: String,
+        min: 1
+      }
+    }).validate({ _id });
+
+    Links.update(
+      { _id },
+      {
+        $set: { lastVisitedAt: new Date().getTime() },
+        $inc: { visitedCount: 1 }
+      }
+    );
   }
 });

@@ -15,12 +15,12 @@ const unauthenticatedPages = ["/", "/signup"];
 const authenticatedPages = ["/links"];
 const onEnterPublicPage = () => {
   if (Meteor.userId) {
-    history.replace("/links");
+    return history.replace("/links");
   }
 };
 const onEnterPrivatePage = () => {
   if (!Meteor.userId) {
-    history.replace("/");
+    return history.replace("/");
   }
 };
 
