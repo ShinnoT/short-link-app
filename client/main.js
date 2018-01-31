@@ -1,6 +1,7 @@
 import { Meteor } from "meteor/meteor";
 import { Tracker } from "meteor/tracker";
 import ReactDOM from "react-dom";
+import { Session } from "meteor/session";
 
 //local imports
 // import { Links } from "../imports/api/links";
@@ -15,5 +16,6 @@ Tracker.autorun(() => {
 });
 
 Meteor.startup(() => {
+  Session.set("showVisible", true);
   ReactDOM.render(routes, document.querySelector("#app"));
 });

@@ -8,6 +8,7 @@ import React from "react";
 import { LinksList } from "./LinksList";
 import { Header } from "./Header";
 import { AddLink } from "./AddLink";
+import { LinksListFilters } from "./LinksListFilters";
 
 // export class Lnk extends React.Component {
 //   render() {
@@ -29,6 +30,7 @@ export const Lnk = () => {
   return (
     <div>
       <Header title="Your Links" />
+      <LinksListFilters />
       <LinksList />
       <AddLink />
     </div>
