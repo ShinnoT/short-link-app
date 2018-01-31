@@ -3,6 +3,7 @@ import { Tracker } from "meteor/tracker";
 import { Meteor } from "meteor/meteor";
 
 import { Links } from "../api/links";
+import { LinksListItem } from "./LinksListItem";
 
 export class LinksList extends React.Component {
   constructor(props) {
@@ -30,13 +31,19 @@ export class LinksList extends React.Component {
   renderLinksListItems() {
     const links = this.state.links;
     return links.map(link => {
-      return (
-        <div key={link._id}>
-          <a href={link.url} target="_blank">
-            {link.url}
-          </a>
-        </div>
-      );
+      // absoluteUrl generates urls for your app
+      const shortUrl = Meteor.absoluteUrl(link._id, {
+        rootUrl: "localhost:3000/links",
+        secure: true
+      });
+      return <LinksListItem key={link._id} shortUrl={shortUrl} {...link} />;
+      // return (
+      //   <div key={link._id}>
+      //     <a href={link.url} target="_blank">
+      //       {link.url}
+      //     </a>
+      //   </div>
+      // );
     });
   }
 
