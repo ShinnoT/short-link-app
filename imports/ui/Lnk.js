@@ -31,8 +31,8 @@ export const Lnk = () => {
     <div>
       <Header title="Your Links" />
       <LinksListFilters />
-      <LinksList />
       <AddLink />
+      <LinksList />
     </div>
   );
 };

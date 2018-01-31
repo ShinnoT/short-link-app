@@ -2,6 +2,7 @@ import { Meteor } from "meteor/meteor";
 import { Tracker } from "meteor/tracker";
 import ReactDOM from "react-dom";
 import { Session } from "meteor/session";
+import React from "react";
 
 //local imports
 // import { Links } from "../imports/api/links";
