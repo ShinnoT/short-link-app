@@ -36,22 +36,24 @@ export class Signup extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Signup component here</p>
+      <div className="boxed-view">
+        <div className="boxed-view__box">
+          <p>Signup component here</p>
 
-        {this.state.error ? <p>{this.state.error}</p> : undefined}
+          {this.state.error ? <p>{this.state.error}</p> : undefined}
 
-        <form onSubmit={this.onSubmit.bind(this)} noValidate>
-          <input type="email" ref="email" name="email" placeholder="Email" />
-          <input
-            type="password"
-            ref="password"
-            name="password"
-            placeholder="Password"
-          />
-          <button>Sign Up</button>
-        </form>
-        <Link to="/">Login</Link>
+          <form onSubmit={this.onSubmit.bind(this)} noValidate>
+            <input type="email" ref="email" name="email" placeholder="Email" />
+            <input
+              type="password"
+              ref="password"
+              name="password"
+              placeholder="Password"
+            />
+            <button>Sign Up</button>
+          </form>
+          <Link to="/">Login</Link>
+        </div>
       </div>
     );
   }
