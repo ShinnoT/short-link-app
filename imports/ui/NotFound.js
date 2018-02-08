@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // export class NotFound extends React.Component {
 //   render() {
@@ -7,5 +8,13 @@ import React from "react";
 // }
 
 export const NotFound = () => {
-  return <p>404: Page Not Found</p>;
+  return (
+    <div className="boxed-view">
+      <div className="boxed-view__box">
+        <h1>404: Page Not Found</h1>
+        <p>unable to find your page...</p>
+        <Link to="/">Home Page</Link>
+      </div>
+    </div>
+  );
 };

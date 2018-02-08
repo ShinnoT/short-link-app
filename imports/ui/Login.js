@@ -31,7 +31,11 @@ export class Login extends React.Component {
 
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
-          <form onSubmit={this.onSubmit.bind(this)} noValidate>
+          <form
+            onSubmit={this.onSubmit.bind(this)}
+            noValidate
+            className="boxed-view__form"
+          >
             <input type="email" ref="email" name="email" placeholder="Email" />
             <input
               type="password"
