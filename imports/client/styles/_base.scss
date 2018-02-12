@@ -18,6 +18,10 @@ h1 {
   margin-bottom: $space;
 }
 
+p {
+  padding: $space;
+}
+
 a {
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -32,6 +36,6 @@ input[type="email"],
 input[type="password"] {
   font-size: $base-fontsize;
   margin-bottom: $space;
-  padding: 0.8rem;
+  padding: $input-spacing;
   border: 1px solid $input-border;
 }

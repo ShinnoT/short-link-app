@@ -43,7 +43,7 @@ export class Login extends React.Component {
               name="password"
               placeholder="Password"
             />
-            <button>Log in</button>
+            <button className="button">Log in</button>
           </form>
           <Link to="/signup">Dont have account?</Link>
         </div>

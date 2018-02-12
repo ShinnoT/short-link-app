@@ -54,7 +54,7 @@ export class Signup extends React.Component {
               name="password"
               placeholder="Password"
             />
-            <button>Sign Up</button>
+            <button className="button">Sign Up</button>
           </form>
           <Link to="/">Login</Link>
         </div>
