@@ -13,7 +13,9 @@ export const NotFound = () => {
       <div className="boxed-view__box">
         <h1>404: Page Not Found</h1>
         <p>unable to find your page...</p>
-        <Link to="/">Home Page</Link>
+        <Link to="/" className="button--link">
+          Home Page
+        </Link>
       </div>
     </div>
   );
