@@ -7,9 +7,17 @@
   font-size: $base-fontsize;
   text-transform: uppercase;
   margin-bottom: $space;
+  line-height: 1.2;
 }
 
 .button--link {
   display: inline-block;
   text-decoration: none;
+}
+
+.button--pill {
+  background-color: transparent;
+  border: 1px solid $button-pill-color;
+  color: $button-pill-color;
+  padding: 0.3rem 0.8rem;
 }

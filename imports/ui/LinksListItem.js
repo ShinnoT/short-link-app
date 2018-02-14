@@ -52,13 +52,24 @@ export class LinksListItem extends React.Component {
           visitedCount={this.props.visitedCount}
           lastVisitedAt={this.props.lastVisitedAt}
         />
-        <a href={this.props.shortUrl} className="button" target="_blank">
+        <a
+          href={this.props.shortUrl}
+          className="button button--pill button--link"
+          target="_blank"
+        >
           Visit
         </a>
-        <button ref="copy" data-clipboard-text={this.props.shortUrl}>
+        <button
+          ref="copy"
+          className="button button--pill"
+          data-clipboard-text={this.props.shortUrl}
+        >
           {this.state.copyButtonText}
         </button>
-        <button onClick={this.onClick.bind(this)}>
+        <button
+          className="button button--pill"
+          onClick={this.onClick.bind(this)}
+        >
           {this.props.visible ? "Hide" : "Unhide"}
         </button>
       </div>
