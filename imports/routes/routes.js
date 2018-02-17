@@ -5,6 +5,8 @@ import createHistory from "history/createBrowserHistory";
 
 const history = createHistory();
 
+//routes defined by react router for the entire app
+
 // local imports
 import { Signup } from "../ui/Signup";
 import { Lnk } from "../ui/Lnk";
