@@ -1,9 +1,27 @@
 .nav-bar {
   display: flex;
   width: 100vw;
-  height: 10rem;
-  //   position: relative;
-  //   top: 0;
-  //   left: 0;
-  background-color: red;
+  height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: purple;
+  h1 {
+    margin-left: 3rem;
+    margin-bottom: 0;
+    color: white;
+  }
+  button {
+    margin-right: 3rem;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: white;
+      color: purple;
+      cursor: pointer;
+    }
+  }
 }
