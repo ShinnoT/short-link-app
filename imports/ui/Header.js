@@ -22,7 +22,7 @@ export const Header = props => {
     Accounts.logout();
   };
   return (
-    <div>
+    <div className="nav-bar">
       <h1>{props.title}</h1>
       <button onClick={logout}>Logout</button>
     </div>
