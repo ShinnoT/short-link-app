@@ -4,7 +4,7 @@
   height: 5rem;
   justify-content: space-between;
   align-items: center;
-  background-color: purple;
+  background-color: $brand-primary;
   h1 {
     margin-left: 3rem;
     margin-bottom: 0;
@@ -20,7 +20,7 @@
     transition: 0.3s ease;
     &:hover {
       background-color: white;
-      color: purple;
+      color: $brand-primary;
       cursor: pointer;
     }
   }

@@ -30,9 +30,11 @@ export const Lnk = () => {
   return (
     <div>
       <Header title="Your Links" />
-      <LinksListFilters />
-      <AddLink />
-      <LinksList />
+      <div className="page-content">
+        <LinksListFilters />
+        <AddLink />
+        <LinksList />
+      </div>
     </div>
   );
 };
