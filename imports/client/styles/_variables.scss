@@ -1,12 +1,15 @@
 // colors
 $brand-primary: #5b4681;
 $grey: #dddddd;
+$light-grey: #f9f9f9;
+$dark-grey: #515151;
 
 // spacing
 $space: 1.4rem;
 
 // font size
 $base-fontsize: 1.6rem;
+$large-font-size: 1.8rem;
 
 // form inputs
 $input-border: $grey;
@@ -20,6 +23,11 @@ $boxed-view-background: white;
 $button-background: $brand-primary;
 $button-color: white;
 $button-pill-color: $brand-primary;
-$button-secondary-bg: #f9f9f9;
+$button-secondary-bg: $light-grey;
 $button-secondary-color: #777777;
 $button-secondary-border-color: $grey;
+
+// item
+$item-bg: $light-grey;
+$item-border: darken($item-bg, 8%);
+$sub-link-color: $dark-grey;

@@ -1,0 +1,15 @@
+.item {
+  background: $item-bg;
+  border: 1px solid $item-border;
+  margin-bottom: $space;
+  padding: $space;
+  p {
+    padding: 0;
+    margin: 1rem 0;
+    color: $sub-link-color;
+  }
+  a,
+  button {
+    margin-right: 1.5rem;
+  }
+}

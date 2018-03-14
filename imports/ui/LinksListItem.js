@@ -43,10 +43,9 @@ export class LinksListItem extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>{this.props.url}</p>
+      <div className="item">
+        <h2>{this.props.url}</h2>
         <p>{this.props.shortUrl}</p>
-        <p>visible: {this.props.visible.toString()}</p>
         {/* {element.toString()} */}
         <Stats
           visitedCount={this.props.visitedCount}
